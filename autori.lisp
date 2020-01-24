@@ -1,3 +1,3 @@
 (loop for i across (read-line)
   do (when (upper-case-p i)
-    (princ i)))
+           (princ i)))
