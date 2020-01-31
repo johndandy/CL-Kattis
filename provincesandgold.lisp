@@ -1,0 +1,17 @@
+;;;; Provinces and Gold
+
+(let ((buying-power (+ (* 3 (read))
+                       (* 2 (read))
+                       (read))))
+  (cond ((< buying-power 2)
+         (write-line "Copper"))
+        ((< buying-power 3)
+         (write-line "Estate or Copper"))
+        ((< buying-power 5)
+         (write-line "Estate or Silver"))
+        ((< buying-power 6)
+         (write-line "Duchy or Silver"))
+        ((< buying-power 8)
+         (write-line "Duchy or Gold"))
+        ((< buying-power 16)
+         (write-line "Province or Gold"))))
