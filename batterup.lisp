@@ -1,11 +1,8 @@
 ;;;; Batter Up
 
-(let ((total-at-bats (read))
-      (this-at-bat 0)
-      (batting-average 0))
-  (dotimes (i total-at-bats)
-    (setq this-at-bat (read))
-    (if (< this-at-bat 0)
-        (decf total-at-bats)
-        (incf batting-average this-at-bat)))
-  (write (/ (coerce batting-average 'float) total-at-bats)))
+(loop repeat (read)
+      for this-at-bat = (read)
+      unless (< this-at-bat 0)
+        sum this-at-bat into batting-average
+        and sum 1 into total-at-bats
+      finally (write (/ (coerce batting-average 'float) total-at-bats)))
