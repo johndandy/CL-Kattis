@@ -1,7 +1,9 @@
 ;;;; Baksetball One-on-One
 
 (loop for i across (read-line)
-      for j = t
+      for j = j
+      if (eq i #\A)
+         do (setq j t)
       if (eq i #\B)
          do (setq j nil)
       if (eq i #\1)
